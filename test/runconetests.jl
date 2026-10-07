@@ -54,7 +54,7 @@ function cone_types(T::Type{<:Real})
         Cones.WSOSInterpEpiNormOne{T},
     ]
 
-    if T <: LinearAlgebra.BlasReal
+    if Hypatia.USE_GPL_LIBS && T <: LinearAlgebra.BlasReal
         append!(
             cones_T,
             [
